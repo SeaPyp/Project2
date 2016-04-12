@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'wines/show'
+
+  get 'wines/new'
+
+  get 'wines/destroy'
+
+  get 'posts/show'
+
+  get 'posts/new'
+
+  get 'posts/destroy'
+
 root 'users#new'
 
 get "users" => "users#index"
