@@ -1,3 +1,7 @@
+<h1>Good to see you again, <%= @user.first_name %></h1>
+
+<p>Here is the last wine you drank:</p>
+
 <h1>Create New Post</h1>
 <form action="/login" method="post">
   <label>Title</label>
@@ -9,3 +13,5 @@
   <button>Upload Image</button>
   <button>Post</button>
 </form>
+
+<%= link_to 'Log Out', logout_path, method: :delete %>

@@ -1,26 +1,22 @@
 Rails.application.routes.draw do
+root 'users#new'
 
   get 'wines/show'
-
   get 'wines/new'
-
   get 'wines/destroy'
 
   get 'posts/show'
-
   get 'posts/new'
-
   get 'posts/destroy'
 
-root 'users#new'
+  get "users" => "users#index"
+  get "users/new" => "users#new"
+  post "users" => "users#create"
+  get "users/welcome_user"
 
-get "users" => "users#index"
-get "users/new" => "users#new"
-post "users" => "users#create"
-
-get '/login'     => 'sessions#new'
-post '/login'    => 'sessions#create'
-delete '/logout' => 'sessions#destroy'
+  get '/login'     => 'sessions#new'
+  post '/login'    => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
 
 
