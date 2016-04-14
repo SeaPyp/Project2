@@ -12,8 +12,9 @@ root 'users#new'
   # get 'posts' => 'posts#index'
   get 'posts' => 'posts#new'
   post 'posts' => 'posts#create'
-  # delete 'posts/:id' => "posts#destroy"
-  get 'posts/destroy'
+  get 'posts/:id/edit' => 'posts#edit', as: :edit_post
+  patch 'posts/:id' => 'posts#update'
+  delete 'posts/:id' => 'posts#destroy'
 
   get 'users' => 'users#index'
   get 'users/new' => 'users#new'
