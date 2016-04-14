@@ -7,7 +7,7 @@ root 'users#new'
 
 
   get 'posts/new'
-  get 'posts/:id' => 'posts#show'
+  get 'posts/:id' => 'posts#show', as: :post
   # get 'posts/show'
   # get 'posts' => 'posts#index'
   get 'posts' => 'posts#new'

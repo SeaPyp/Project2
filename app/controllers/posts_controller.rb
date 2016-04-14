@@ -10,9 +10,9 @@ class PostsController < ApplicationController
     @post = Post.new({user_id: session[:user_id]})
   end
 
-  def edit
-    @post = Post.find(params[:id])
-  end
+  # def edit
+  #   @post = Post.find(params[:id])
+  # end
 
   #Create a new post
   def create
