@@ -9,6 +9,12 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
+  def new_user_profile
+    @users = User.all
+    @user = User.find(session[:user_id])
+    @posts = Post.all.order(created_at: 'DESC')
+  end
+
   def new
     @user = User.new
   end
@@ -27,7 +33,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to "/users/welcome_user"
     else
-      # flash ('user already exists')
+      flash[:notice] = "Must be a unique email address"
+      flash[:notice] = "Password must be longer than 5 characters!"
       render :new
 
     end

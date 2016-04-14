@@ -10,6 +10,11 @@ class PostsController < ApplicationController
     @post = Post.new({user_id: session[:user_id]})
   end
 
+  def new_user_profile
+    @user = User.find(session[:user_id])
+    @posts = Post.all.order(created_at: 'DESC')
+  end
+
   def edit
     @post = Post.find(params[:id])
   end

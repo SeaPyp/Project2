@@ -20,6 +20,7 @@ root 'users#new'
   get 'users/new' => 'users#new'
   post 'users' => 'users#create'
   get 'users/welcome_user'
+  get 'users/new_user_profile'
 
   get '/login'     => 'sessions#new'
   post '/login'    => 'sessions#create'
