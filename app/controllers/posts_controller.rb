@@ -12,12 +12,18 @@ class PostsController < ApplicationController
 
   def new_user_profile
     @user = User.find(session[:user_id])
-    @posts = Post.all.order(created_at: 'DESC')
+    @posts = Post.all.order(created_at: 'ASC')
   end
 
   def edit
     @post = Post.find(params[:id])
   end
+
+  def show
+    @user = User.find(session[:user_id])
+    @post = Post.find(params[:id])
+  end
+
 
   #Create a new post
   def create

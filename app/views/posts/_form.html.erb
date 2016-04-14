@@ -1,0 +1,11 @@
+<%= form_for(@post) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+  <%= f.label :text, "Content" %>
+  <%= f.text_field :text %>
+  <%= f.label :image %>
+  <%= f.file_field :image%>
+  <%= f.submit %>
+<% end %>

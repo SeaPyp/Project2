@@ -1,12 +1,6 @@
 <%= form_for :post, url: post_path(@post), method: :patch do |f| %>
 
-  <%= form_for(@post) do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.label :text, "Content" %>
-    <%= f.text_field :text %>
-    <%= f.label :image %>
-    <%= f.file_field :image%>
-    <%= f.submit %>
-  <% end %>
+<%= render 'form' %>
+
 <% end %>
+

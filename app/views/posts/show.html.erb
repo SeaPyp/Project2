@@ -6,7 +6,12 @@
 </p>
 
 <p>
-  <%= image_tag @user.posts.last.image.url(:large) %>
+  <strong>Rating:</strong>
+  <%= @post.rating %>
+</p>
+
+<p>
+  <%= image_tag @post.image.url(:large) %>
 </p>
 
 <p>
