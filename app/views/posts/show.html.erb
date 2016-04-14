@@ -1,2 +1,18 @@
 <h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+
+<table>
+  <tr>
+      <th>Title</th>
+      <th>Text</th>
+      <th colspan='3'></th>
+    </tr>
+
+  <% @user.posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.text %></td>
+      <td><%= link_to 'Show', post_path(post) %></td>
+    </tr>
+
+  <% end %>
+</table>

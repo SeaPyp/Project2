@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
       redirect_to "/posts/new"
     else
       render :new
+    end
   end
-end
 
   def destroy
     session.delete(:user_id)

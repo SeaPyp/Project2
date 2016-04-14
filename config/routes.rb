@@ -5,14 +5,20 @@ root 'users#new'
   get 'wines/new'
   get 'wines/destroy'
 
-  get 'posts/show'
+
   get 'posts/new'
+  get 'posts/:id' => 'posts#show'
+  # get 'posts/show'
+  # get 'posts' => 'posts#index'
+  get 'posts' => 'posts#new'
+  post 'posts' => 'posts#create'
+  # delete 'posts/:id' => "posts#destroy"
   get 'posts/destroy'
 
-  get "users" => "users#index"
-  get "users/new" => "users#new"
-  post "users" => "users#create"
-  get "users/welcome_user"
+  get 'users' => 'users#index'
+  get 'users/new' => 'users#new'
+  post 'users' => 'users#create'
+  get 'users/welcome_user'
 
   get '/login'     => 'sessions#new'
   post '/login'    => 'sessions#create'

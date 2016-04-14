@@ -1,9 +1,4 @@
-<%= current_user.first_name %>
-<h1>Good to see you again, <%= @user.first_name %></h1>
-
-<p>Here is the last wine you drank:</p>
-
-<h1>Create New Post</h1>
+<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
 
 <%= form_for(@post) do |f| %>
   <%= f.label :title %>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-def index
+  def index
     @users = User.all
   end
 
@@ -12,6 +12,7 @@ def index
     @user = User.new
   end
 
+  #Create a new User
   def create
     @user = User.new({
       first_name: params[:first_name],
@@ -25,7 +26,9 @@ def index
       session[:user_id] = @user.id
       redirect_to "/users/welcome_user"
     else
+      # flash ('user already exists')
       render :new
+
     end
   end
 end
