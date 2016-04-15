@@ -19,16 +19,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def show
-    @user = User.find(session[:user_id])
-    @post = Post.find(params[:id])
-  end
-
-
   #Create a new post
   def create
     @user = User.find(session[:user_id])
     @post = @user.posts.new(post_params)
+    @comment = @post.comments.create(comment_params)
     if @post.save
       redirect_to "/posts/#{@post.id}"
     else
@@ -57,5 +52,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :text, :image, :rating, :user_id, :wine_id)
+  end
+
+  def comment_params
+      params.require(:comment).permit(:commenter, :body)
   end
 end

@@ -6,6 +6,7 @@ root 'users#new'
   get 'wines/destroy'
 
 
+
   get 'posts/new'
   get 'posts/:id' => 'posts#show', as: :post
   # get 'posts/show'
