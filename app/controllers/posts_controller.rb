@@ -23,7 +23,6 @@ class PostsController < ApplicationController
   def create
     @user = User.find(session[:user_id])
     @post = @user.posts.new(post_params)
-    @comment = @post.comments.create(comment_params)
     if @post.save
       redirect_to "/posts/#{@post.id}"
     else

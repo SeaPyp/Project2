@@ -5,7 +5,23 @@ root 'users#new'
   get 'wines/new'
   get 'wines/destroy'
 
+  get 'posts/:post_id/comments' => 'comments#index'
+  post 'posts/:post_id/comments' => 'comments#create', as: :post_comments
+  get 'posts/:post_id/comments/new' => 'comments#new'
+  get 'posts/:post_id/comments/id/edit' => 'comments#edit'
+  get 'posts/:post_id/comments/:id' => 'comments#show'
+  patch 'posts/:post_id/comments' => 'comments#update'
+  put 'posts/:post_id/comments' => 'comments#update'
+  delete 'posts/:post_id/comments' => 'comments#destroy'
 
+#     article_comments GET    /articles/:article_id/comments(.:format)          comments#index
+#                      POST   /articles/:article_id/comments(.:format)          comments#create
+#  new_article_comment GET    /articles/:article_id/comments/new(.:format)      comments#new
+# edit_article_comment GET    /articles/:article_id/comments/:id/edit(.:format) comments#edit
+#      article_comment GET    /articles/:article_id/comments/:id(.:format)      comments#show
+#                      PATCH  /articles/:article_id/comments/:id(.:format)      comments#update
+#                      PUT    /articles/:article_id/comments/:id(.:format)      comments#update
+#                      DELETE /articles/:article_id/comments/:id(.:format)
 
   get 'posts/new'
   get 'posts/:id' => 'posts#show', as: :post

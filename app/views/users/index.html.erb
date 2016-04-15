@@ -1,12 +1,15 @@
 <h1>Good to see you again, <%= @user.first_name.titleize %></h1>
 
-<p>Here is the last wine you drank:</p>
+<% if @user.posts.count > 0 %>
+  <p>Here is the last wine you drank:</p>
 
-<%= @user.posts.last.title %>
-<%= @user.posts.last.text %>
-<%= @user.posts.last.rating %>
-<%= image_tag @user.posts.last.image.url(:large) %>
-
+  <%= @user.posts.last.title %>
+  <%= @user.posts.last.text %>
+  <%= @user.posts.last.rating %>
+  <%= image_tag @user.posts.last.image.url(:large) %>
+<% else %>
+  <p>You haven't had any wine yet. What are you waiting for?</p>
+<% end %>
 <br>
 
 <%= link_to '<button>Create New Post</button>'.html_safe, posts_new_path %>
